@@ -63,11 +63,20 @@ export default function Register() {
                         <Form.Item
                             name="confirm"
                             label="Confirm Password"
+                            dependencies={['password']}
                             rules={[
                                 {
                                     required: true,
                                     message: 'Please confirm your password!',
                                 },
+                                ({ getFieldValue }) => ({
+                                    validator(rule, value) {
+                                        if(!value || getFieldValue('password') === value){
+                                            return Promise.resolve()
+                                        }
+                                        return Promise.reject('Confirm password ต้องตรงกับ Password')
+                                    }
+                                })
                             ]}
                         >
                             <Input.Password />
@@ -81,8 +90,8 @@ export default function Register() {
                             <Input />
                         </Form.Item>
 
-                            <Button className="Button" type="primary" htmlType="submit">
-                                Register
+                        <Button className="Button" type="primary" htmlType="submit">
+                            Register
                             </Button>
                     </Form>
                 </div>
