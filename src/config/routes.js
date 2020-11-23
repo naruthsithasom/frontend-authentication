@@ -3,7 +3,7 @@ import LoginPage from '../components/pages/Login'
 import ProfilePage from '../components/pages/Profile' 
 import RegisterPage from '../components/pages/Register'
 
-const components= { 
+const components = { 
   todo: {
     url: '/todo',
     component: TodoPage
@@ -21,19 +21,19 @@ const components= {
     component: RegisterPage
   }
 }
-// Role ไหนเข้าหน้าไหนได้บ้าง=
+// Role หน้าไหนได้บ้าง
 export default {
   gest: {
     allowedRoutes:[
-      component.login,
-      component.register
+      components.login,
+      components.register
     ],
     redirectRoutes:'/login'
   },
   user: {
     allowedRoutes:[
-      component.todo,
-      component.profile,
+      components.todo,
+      components.profile,
     ],
     redirectRoutes:'/profile'
   }
