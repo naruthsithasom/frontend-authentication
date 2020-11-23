@@ -23,7 +23,7 @@ const components = {
 }
 // Role หน้าไหนได้บ้าง
 export default {
-  gest: {
+  guest: {
     allowedRoutes:[
       components.login,
       components.register

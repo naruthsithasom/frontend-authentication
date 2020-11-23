@@ -4,11 +4,10 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 
 function PrivateRoutes(props){
   
-  const role = props.role || 'guest';
-
-  const allowedRoutes = ConfigRoutes[role].allowedRoutes;
-  const redirectRoutes = ConfigRoutes[role].redirectRoutes;
-
+  const role = props.role || 'guest'
+  const allowedRoutes = ConfigRoutes[role].allowedRoutes
+  const redirectRoutes = ConfigRoutes[role].redirectRoutes
+  
   return(
     <Switch>
       {allowedRoutes.map(route => (
